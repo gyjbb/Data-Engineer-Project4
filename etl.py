@@ -115,7 +115,7 @@ def process_log_data(spark, input_data, output_data):
     """)
     
     # write users table to parquet files
-    users_table..createOrReplaceTempView('users')
+    users_table.createOrReplaceTempView('users')
     users_table.write.parquet(
         join(output_data, 'users/users.parquet'), 'overwrite')
     
