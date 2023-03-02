@@ -77,7 +77,7 @@ def process_song_data(spark, input_data, output_data):
     song_data.createOrReplaceTempView("staging_songs")
 
     # extract columns to create songs table
-    songs_table = spark.sql("""SELECT DISTINCT song_id, title AS song_title, \
+    songs_table = spark.sql("""SELECT DISTINCT song_id, title \
                             artist_id, year, duration 
                             FROM staging_songs
                             where year != 0
