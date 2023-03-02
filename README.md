@@ -7,10 +7,10 @@ Sparkify in this project is a song stream music App. Currently the original data
 ## Data Modeling Process
 According to the Star schema of relational database, 1 fast table and 4 dimension tables are designed from the original songs and logs datasets.
 ### Original datasets
-songs dataset \
+songs dataset sample \
 ![song data](https://github.com/gyjbb/Data-Engineer-Project4/blob/main/song_data.png?raw=true)
 
-logs dataset
+logs dataset sample
 ![log data](https://github.com/gyjbb/Data-Engineer-Project4/blob/main/log_data.png?raw=true) 
 
 ### Fact table
