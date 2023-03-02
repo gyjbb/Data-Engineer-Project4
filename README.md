@@ -1,4 +1,4 @@
-# Data-Engineer_Project4
+# Data-Engineer-Project4
 Create data lake with Spark SQL
 
 ## Project Introduction
@@ -8,10 +8,10 @@ Sparkify in this project is a song stream music App. Currently the original data
 According to the Star schema of relational database, 1 fast table and 4 dimension tables are designed from the original songs and logs datasets.
 ### Original datasets
 songs dataset
-![song data](https://github.com/gyjbb/Data-Engineer_Project4/blob/main/song_data.png?raw=true)
+![song data](https://github.com/gyjbb/Data-Engineer-Project4/blob/main/song_data.png?raw=true)
 
 logs dataset
-![log data](https://github.com/gyjbb/Data-Engineer_Project4/blob/main/log_data.png?raw=true) 
+![log data](https://github.com/gyjbb/Data-Engineer-Project4/blob/main/log_data.png?raw=true) 
 
 ### Fact table
 **songplays**
