@@ -10,6 +10,9 @@ from spark.sql.types import StructType, StructField, StringType, DoubleType, Int
 
 
 def create_spark_session():
+    """
+    create a spark session
+    """
     spark = SparkSession \
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
@@ -72,6 +75,9 @@ def create_log_dataframe(input_data, spark):
 
 
 def process_song_data(spark, input_data, output_data):
+    """
+    This function reads the songs dataset and creates the songs_table and artists table for data ETL.
+    """
     # get filepath to song data file
     song_data = create_song_dataframe(input_data, spark)
     song_data.createOrReplaceTempView("staging_songs")
@@ -102,6 +108,10 @@ def process_song_data(spark, input_data, output_data):
 
 
 def process_log_data(spark, input_data, output_data):
+    """
+    This function firstly reads the logs dataset, and creates the users table, and time table.
+    Then it loads the songs dataset, join two datasets together and create the songplay table.
+    """
     # get filepath to log data file
     log_data = create_log_dataframe(input_data, spark)
     # filter by actions for song plays
@@ -164,7 +174,10 @@ def process_log_data(spark, input_data, output_data):
 
 
 def main():
-    
+    """
+    The main function define the directories for input and output data,
+    and call the ETL functions to process datasets.
+    """
     config = configparser.ConfigParser()
     config.read('dl.cfg')
 
