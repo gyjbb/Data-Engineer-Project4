@@ -70,7 +70,8 @@ def create_log_dataframe(input_data, spark):
     create_timestamp = udf(lambda x: datetime.fromtimestamp(x / 1000.0))
     log_df = log_df.withColumn('timeStamp', create_timestamp(log_df.ts))
     # creaate a new start time column for the log dataframe
-    log_df = log_df.withColumn('startTime', str(log_df.timeStamp))
+    create_datetime = udf(lambda y: str(y))
+    log_df = log_df.withColumn('startTime', create_datetime(log_df.timeStamp))
     return log_df
 
 
