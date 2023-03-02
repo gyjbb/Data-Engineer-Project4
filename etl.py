@@ -5,7 +5,7 @@ from os.path import join, dirname, abspath
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import udf, col, monotonically_increasing_id
 from pyspark.sql.functions import year, month, dayofmonth, hour, weekofyear, date_format
-from spark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType, LongType
+from pyspark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType, LongType
 
 
 
