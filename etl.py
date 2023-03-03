@@ -150,6 +150,7 @@ def process_log_data(spark, input_data, output_data):
 
     # read in song data to use for songplays table
     song_df = create_song_dataframe(input_data, spark)
+    song_df.createOrReplaceTempView("song_df")
     combined_df = spark.sql("""SELECT l.userId AS userId, l.level AS level, \
                 s.song_id AS song_id, s.artist_id AS artist_id, \
                 l.sessionId AS sessionId, l.location AS location, l.userAgent AS userAgent, \
