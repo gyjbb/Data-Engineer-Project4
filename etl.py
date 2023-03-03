@@ -157,7 +157,7 @@ def process_log_data(spark, input_data, output_data):
                 l.startTime AS startTime
                 FROM staging_logs l
                 INNER JOIN song_df s
-                ON staging_logs.artist = song_df.artist_name
+                ON l.artist = s.artist_name
     """)
 
     # extract columns from joined song and log datasets to create songplays table 
